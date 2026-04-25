@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Misión IA Ética y Beneficios</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+    background: #121212; /* oscuro suave */
+    color: #e0e0e0;
+    margin:0;
+}
+
+/* TITULO */
+h1{
+    color:#64b5f6;
+    margin-top:30px;
+}
+
+/* TARJETA */
+.contenedor{
+    background:#1e1e1e;
+    padding:25px;
+    margin:40px auto;
+    width:65%;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+/* BOTONES DEL JUEGO */
+button{
+    display:block;
+    margin:12px auto;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#2c2c2c;
+    color:white;
+    cursor:pointer;
+    width:90%;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#64b5f6;
+    color:black;
+}
+
+/* RESULTADO */
+#resultado{
+    font-weight:bold;
+    margin-top:10px;
+}
+
+/* BOTON ATRAS */
+.boton1{
+    position:fixed;
+    top:15px;
+    left:15px;
+    padding:10px 20px;
+    background:#64b5f6;
+    color:black;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.boton1:hover{
+    background:#90caf9;
+    transform:scale(1.05);
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- BOTON ATRAS BIEN HECHO -->
+<a href="beneficios.html" class="boton1">⮌ Atrás</a>
+
+<h1>🧠 Misión IA: Decisiones Éticas y Beneficios</h1>
+
+<div class="contenedor">
+    <h3 id="pregunta"></h3>
+
+    <button onclick="respuesta(0)" id="op1"></button>
+    <button onclick="respuesta(1)" id="op2"></button>
+    <button onclick="respuesta(2)" id="op3"></button>
+
+    <p id="resultado"></p>
+    <p>Puntaje: <span id="puntaje">0</span></p>
+</div>
+
+<script>
+
+let preguntas = [
+{
+texto: "Una IA automatiza tareas repetitivas en tu trabajo.",
+opciones: [
+"Usarla para enfocarte en tareas más importantes",
+"Evitar usarla por miedo",
+"Dejar que haga todo sin supervisión"
+],
+correcta: 0
+},
+{
+texto: "La IA recomienda despedir empleados.",
+opciones: [
+"Hacerlo inmediatamente",
+"Buscar reentrenamiento y alternativas",
+"Ignorar la situación"
+],
+correcta: 1
+},
+{
+texto: "Un estudiante usa IA para estudiar.",
+opciones: [
+"Copiar todo sin entender",
+"Usarla para aprender mejor",
+"No usarla nunca"
+],
+correcta: 1
+},
+{
+texto: "La IA detecta una enfermedad temprano.",
+opciones: [
+"Ignorarla",
+"Dejar que decida sola",
+"Usarla como apoyo médico"
+],
+correcta: 2
+},
+{
+texto: "La IA mejora productividad.",
+opciones: [
+"Usarla para mejorar sin afectar empleados",
+"Usarla solo para reemplazar personas",
+"No usarla"
+],
+correcta: 0
+},
+{
+texto: "La IA analiza grandes datos.",
+opciones: [
+"Depender totalmente",
+"Usarla sin revisar",
+"Usarla como apoyo para decisiones"
+],
+correcta: 2
+},
+{
+texto: "IA en educación personalizada.",
+opciones: [
+"Reemplazar profesores",
+"No usarla",
+"Adaptar aprendizaje al estudiante"
+],
+correcta: 2
+},
+{
+texto: "Uso de datos personales.",
+opciones: [
+"Compartirlos libremente",
+"Proteger privacidad y pedir consentimiento",
+"Usarlos sin permiso"
+],
+correcta: 1
+},
+{
+texto: "IA genera contenido.",
+opciones: [
+"Usarla como apoyo creativo",
+"Copiar todo sin revisar",
+"No usarla nunca"
+],
+correcta: 0
+},
+{
+texto: "Decisiones importantes con IA.",
+opciones: [
+"Ignorar la IA",
+"Dejar que decida todo",
+"Usarla como apoyo y decidir conscientemente"
+],
+correcta: 2
+}
+];
+
+let actual = 0;
+let puntos = 0;
+
+function cargarPregunta(){
+    document.getElementById("pregunta").innerText = preguntas[actual].texto;
+    document.getElementById("op1").innerText = preguntas[actual].opciones[0];
+    document.getElementById("op2").innerText = preguntas[actual].opciones[1];
+    document.getElementById("op3").innerText = preguntas[actual].opciones[2];
+}
+
+function respuesta(op){
+    if(op == preguntas[actual].correcta){
+        document.getElementById("resultado").innerText = "✅ Buen uso de la IA";
+        puntos++;
+    } else {
+        document.getElementById("resultado").innerText = "⚠️ Podrías usar mejor la IA";
+    }
+
+    document.getElementById("puntaje").innerText = puntos;
+
+    actual++;
+
+    if(actual < preguntas.length){
+        setTimeout(() => {
+            document.getElementById("resultado").innerText = "";
+            cargarPregunta();
+        }, 1200);
+    } else {
+        document.getElementById("pregunta").innerText = "Juego terminado 🎉";
+        document.getElementById("resultado").innerText = "Puntaje final: " + puntos + "/10";
+
+        if(puntos >= 8){
+            document.getElementById("resultado").innerText += " 🚀 Excelente uso de la IA";
+        } else if(puntos >=5){
+            document.getElementById("resultado").innerText += " 👍 Buen uso, pero mejora";
+        } else {
+            document.getElementById("resultado").innerText += " ⚠️ Debes aprender a usar la IA mejor";
+        }
+
+        document.getElementById("op1").style.display = "none";
+        document.getElementById("op2").style.display = "none";
+        document.getElementById("op3").style.display = "none";
+    }
+}
+
+cargarPregunta();
+
+</script>
+
+</body>
+</html>

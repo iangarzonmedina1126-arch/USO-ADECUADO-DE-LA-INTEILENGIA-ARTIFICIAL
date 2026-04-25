@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>📚 Beneficios de la IA</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', Arial;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* HEADER */
+header {
+    padding: 25px;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+.subtitulo {
+    opacity: 0.85;
+    font-size: 18px;
+}
+
+/* BOTÓN */
+.boton {
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    transition: 0.3s;
+}
+
+.boton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px #00c6ff;
+}
+
+/* BOTÓN ATRÁS */
+.atras {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    padding: 8px 15px;
+}
+
+/* CONTENEDOR */
+.contenedor {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* LIBROS */
+.biblioteca {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.libro {
+    width: 280px;
+    height: 230px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.libro-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.libro.abierto .libro-inner {
+    transform: rotateY(180deg);
+}
+
+.portada,
+.paginas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* PORTADA */
+.portada {
+    background: linear-gradient(135deg, #1565c0, #0d47a1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    border-left: 10px solid #08306b;
+}
+
+/* PÁGINAS */
+.paginas {
+    background: #fffdf5;
+    color: #333;
+    transform: rotateY(180deg);
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: left;
+    border-left: 10px solid #d6c7a1;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.resaltado {
+    color: #0072ff;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="boton atras">⮌ Atrás</a>
+
+<header>
+    <h1>📚 Biblioteca de Beneficios de la IA</h1>
+    <p class="subtitulo">
+        Haz clic en cada libro para descubrir cómo la IA mejora nuestra vida
+    </p>
+</header>
+
+<div class="contenedor">
+
+<div class="biblioteca">
+
+    <div class="libro" onclick="this.classList.toggle('abierto')">
+        <div class="libro-inner">
+            <div class="portada">
+                ⏳ Más Tiempo
+            </div>
+            <div class="paginas">
+                La IA ayuda a resolver tareas en segundos y nos permite tener
+                <span class="resaltado">más tiempo para aprender y crear</span>.
+            </div>
+        </div>
+    </div>
+
+    <div class="libro" onclick="this.classList.toggle('abierto')">
+        <div class="libro-inner">
+            <div class="portada">
+                🧠 Mejor Pensamiento
+            </div>
+            <div class="paginas">
+                Permite enfocarnos en
+                <span class="resaltado">pensar, analizar y tomar mejores decisiones</span>.
+            </div>
+        </div>
+    </div>
+
+    <div class="libro" onclick="this.classList.toggle('abierto')">
+        <div class="libro-inner">
+            <div class="portada">
+                ❤️ Educación y Salud
+            </div>
+            <div class="paginas">
+                En medicina y educación puede mejorar procesos e incluso
+                <span class="resaltado">salvar vidas</span>.
+            </div>
+        </div>
+    </div>
+
+    <div class="libro" onclick="this.classList.toggle('abierto')">
+        <div class="libro-inner">
+            <div class="portada">
+                🚀 Potencial Humano
+            </div>
+            <div class="paginas">
+                La IA no reemplaza al humano,
+                lo ayuda a
+                <span class="resaltado">ser mejor y avanzar más rápido</span>.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<a href="desicion.html" class="boton">🎮 Jugar ahora</a>
+
+<footer>
+<p>© 2026 Proyecto educativo</p>
+</footer>
+
+</body>
+</html>

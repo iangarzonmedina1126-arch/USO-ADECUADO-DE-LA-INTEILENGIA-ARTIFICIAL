@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>⚠️ Zona de Riesgo - IA</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', Arial;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #1a1a1a, #2b2b2b, #3a1f1f);
+}
+
+/* HEADER */
+header {
+    padding: 30px 20px;
+    background: rgba(255,0,0,0.08);
+    box-shadow: 0 0 20px rgba(255,0,0,0.2);
+}
+
+h1 {
+    font-size: 38px;
+    color: #ff4d4d;
+    text-shadow: 0 0 10px rgba(255,0,0,0.4);
+}
+
+.subtitulo {
+    font-size: 18px;
+    opacity: 0.9;
+    color: #ffd6d6;
+}
+
+/* BOTÓN */
+.boton {
+    display: inline-block;
+    margin: 20px;
+    padding: 14px 28px;
+    font-size: 16px;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff3c3c, #b30000);
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255,0,0,0.3);
+}
+
+.boton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255,0,0,0.6);
+}
+
+/* CONTENEDOR */
+.contenedor {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+/* ZONAS DE PELIGRO */
+.zona {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-left: 6px solid #ff3c3c;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.zona:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    color: #ff5c5c;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #f5f5f5;
+}
+
+.alerta {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* BOTÓN ESCAPE ROOM */
+.juego {
+    margin-top: 50px;
+    padding: 18px 35px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #7c4dff, #512da8);
+    color: white;
+    box-shadow: 0 0 20px rgba(124,77,255,0.4);
+    animation: escapeGlow 1.5s infinite alternate;
+}
+
+.juego:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 30px #7c4dff;
+}
+
+/* EFECTO BRILLO */
+@keyframes escapeGlow {
+    from {
+        box-shadow: 0 0 10px rgba(124,77,255,0.3);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(124,77,255,0.8);
+    }
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>☣️ ZONA DE RIESGO IA ☣️</h1>
+    <p class="subtitulo">
+        Atención: el mal uso de la inteligencia artificial puede ser peligroso
+    </p>
+</header>
+
+<a href="index.html" class="boton">⮌ Salir de la zona de riesgo</a>
+
+<div class="contenedor">
+
+    <div class="zona">
+        <h2>⚠️ PELIGRO: Dependencia Mental</h2>
+        <p>
+            Usar demasiado la IA puede hacer que dejes de 
+            <span class="alerta">pensar por ti mismo</span>.
+        </p>
+    </div>
+
+    <div class="zona">
+        <h2>🚫 ZONA LABORAL EN RIESGO</h2>
+        <p>
+            Algunas empresas pueden usar IA para 
+            <span class="alerta">reemplazar trabajadores</span>
+            y generar desempleo.
+        </p>
+    </div>
+
+    <div class="zona">
+        <h2>☠️ DESINFORMACIÓN ACTIVA</h2>
+        <p>
+            La IA puede crear contenido falso que parece real y provocar engaños y manipulación esto se le conoce como
+            <span class="alerta">deepfake.</span>
+        </p>
+    </div>
+
+    <div class="zona">
+        <h2>🔒 PRIVACIDAD EN CUARENTENA</h2>
+        <p>
+            Si no se controla, puede usar
+            <span class="alerta">datos personales sin permiso</span>.
+        </p>
+    </div>
+
+    <div class="zona">
+        <h2>🛑 RECOMENDACIÓN FINAL</h2>
+        <p>
+            Nunca confíes ciegamente:
+            <span class="alerta">verifica, analiza y cuestiona</span>.
+        </p>
+    </div>
+
+    <!-- BOTÓN PARA EL JUEGO -->
+    <a href="scape.html" class="boton juego">
+        🔐 ¡ENTRA AL ESCAPE ROOM! ¿PODRÁS SALIR? 🚪🎮
+    </a>
+
+</div>
+
+<footer>
+    <p>© 2026 - Proyecto educativo</p>
+</footer>
+
+</body>
+</html>

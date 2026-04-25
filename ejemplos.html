@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>COMO USAR LA IA</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', Arial;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* HEADER */
+header {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+p {
+    opacity: 0.8;
+}
+
+/* BOTÓN */
+.boton {
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    transition: 0.3s;
+}
+
+.boton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00c6ff;
+}
+
+/* BOTÓN ATRÁS */
+.atras {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    padding: 8px 15px;
+}
+
+/* CONTENEDOR */
+.contenedor {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+/* MEMOFICHAS */
+.memofichas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tarjeta {
+    width: 280px;
+    height: 220px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.tarjeta-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.tarjeta.volteada .tarjeta-inner {
+    transform: rotateY(180deg);
+}
+
+.frente, .atras-tarjeta {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+.frente {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00e5ff;
+}
+
+.atras-tarjeta {
+    transform: rotateY(180deg);
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+}
+
+/* BOTÓN JUEGO */
+.juego {
+    margin-top: 40px;
+    padding: 18px 35px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #00ff88, #00c853);
+    box-shadow: 0 0 20px rgba(0,255,136,0.4);
+    animation: brillo 1.5s infinite alternate;
+}
+
+.juego:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 30px #00ff88;
+}
+
+/* EFECTO BRILLO */
+@keyframes brillo {
+    from {
+        box-shadow: 0 0 10px rgba(0,255,136,0.3);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(0,255,136,0.8);
+    }
+}
+
+footer {
+    margin-top: 40px;
+    opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="boton atras">⮌ Atrás</a>
+
+<header>
+    <h1>¿COMO DEBEMOS USAR LA IA? 🤷</h1>
+    <p>Haz clic en cada memoficha para descubrir la información</p>
+</header>
+
+<div class="contenedor">
+
+<div class="memofichas">
+
+    <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+        <div class="tarjeta-inner">
+            <div class="frente">
+                Estudio
+            </div>
+            <div class="atras-tarjeta">
+                Un estudiante puede usar IA para entender un tema difícil,
+                pero no para copiar toda la tarea sin aprender nada.
+            </div>
+        </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+        <div class="tarjeta-inner">
+            <div class="frente">
+                Trabajo
+            </div>
+            <div class="atras-tarjeta">
+                Una empresa puede usar IA para mejorar la productividad,
+                pero no despedir empleados automáticamente sin análisis humano.
+            </div>
+        </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+        <div class="tarjeta-inner">
+            <div class="frente">
+                Privacidad
+            </div>
+            <div class="atras-tarjeta">
+                Es correcto usar IA para analizar información,
+                pero siempre respetando la privacidad de las personas.
+            </div>
+        </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+        <div class="tarjeta-inner">
+            <div class="frente">
+                Redes Sociales
+            </div>
+            <div class="atras-tarjeta">
+                La IA puede recomendar contenido útil,
+                pero no debe usarse para difundir información falsa.
+            </div>
+        </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('volteada')">
+        <div class="tarjeta-inner">
+            <div class="frente">
+                Decisiones
+            </div>
+            <div class="atras-tarjeta">
+                La IA debe ser una herramienta que apoye
+                nuestras decisiones, no que las reemplace por completo.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- BOTÓN PARA EL JUEGO -->
+<a href="semaforo.html" class="boton juego">
+    🚦 ¡JUGAR AHORA! SEMÁFORO DE LA IA 🎮
+</a>
+
+</div>
+
+<footer>
+<p>© 2026 Proyecto educativo</p>
+</footer>
+
+</body>
+</html>

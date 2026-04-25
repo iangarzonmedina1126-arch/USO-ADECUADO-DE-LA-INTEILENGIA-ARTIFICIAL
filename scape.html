@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>🔐 Escape Room Digital - IA</title>
+
+<style>
+body{
+    font-family: 'Segoe UI', Arial;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+}
+
+header{
+    padding: 30px;
+}
+
+h1{
+    font-size: 38px;
+}
+
+.subtitulo{
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.contenedor{
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 35px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+#sala{
+    font-size: 28px;
+    color: #00e5ff;
+    margin-bottom: 20px;
+}
+
+#pregunta{
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+input{
+    width: 70%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+button{
+    margin-top: 20px;
+    padding: 14px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+
+.pista-btn{
+    margin-left: 10px;
+    background: linear-gradient(45deg, #ffd54f, #ff9800);
+}
+
+#pista{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffd54f;
+    font-weight: bold;
+}
+
+#mensaje{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.progreso{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #90caf9;
+}
+
+.atras{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-size: 14px;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border-radius: 8px;
+    color: white;
+}
+
+footer{
+    margin-top: 40px;
+    opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="atras">⮌ Atrás</a>
+
+<header>
+    <h1>🔐 Escape Room Digital</h1>
+    <p class="subtitulo">
+        Resuelve los enigmas sobre ética, privacidad y riesgos de la IA para escapar
+    </p>
+</header>
+
+<div class="contenedor">
+
+    <div id="sala">Sala 1</div>
+
+    <div id="pregunta">
+        Cargando desafío...
+    </div>
+
+    <input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí">
+
+    <br>
+
+    <button onclick="verificar()">Desbloquear 🔓</button>
+
+    <button onclick="mostrarPista()" class="pista-btn">
+        💡 Ver pista
+    </button>
+
+    <div id="pista"></div>
+    <div id="mensaje"></div>
+    <div class="progreso" id="progreso">Puzzle 1 de 10</div>
+
+</div>
+
+<footer>
+<p>© 2026 - Proyecto educativo</p>
+</footer>
+
+<script>
+const puzzles = [
+{
+sala: "Sala 1: Privacidad",
+pregunta: "Si una IA usa tus datos sin permiso, ¿qué derecho está violando?",
+respuesta: "privacidad",
+pista: "Completa la palabra: p _ i v a _ i d a d"
+},
+{
+sala: "Sala 1: Privacidad",
+pregunta: "Compartir contraseñas con una IA pública es una acción...",
+respuesta: "peligrosa",
+pista: "Completa la palabra: p _ l i g r o _ a"
+},
+{
+sala: "Sala 2: Ética",
+pregunta: "Si copias toda tu tarea usando IA sin aprender, eso se llama...",
+respuesta: "plagio",
+pista: "Completa la palabra: p l a g _ o"
+},
+{
+sala: "Sala 2: Ética",
+pregunta: "La IA debe apoyar decisiones humanas, no ______ totalmente.",
+respuesta: "reemplazarlas",
+pista: "Completa la palabra: r e e m p l a z a r l a _"
+},
+{
+sala: "Sala 3: Desinformación",
+pregunta: "El contenido falso creado con IA se conocen como...",
+respuesta: "deepfake",
+pista: "Completa la palabra: d e e p f a _ e"
+},
+{
+sala: "Sala 3: Desinformación",
+pregunta: "Antes de creer algo generado por IA debemos...",
+respuesta: "verificar",
+pista: "Completa la palabra: v _ r i f i c a _"
+},
+{
+sala: "Sala 4: Riesgos",
+pregunta: "Cuando una empresa reemplaza empleados solo por IA, puede generar...",
+respuesta: "desempleo",
+pista: "Completa la palabra: d e _ e m p l e _"
+},
+{
+sala: "Sala 4: Riesgos",
+pregunta: "Depender totalmente de la IA debilita nuestra capacidad de...",
+respuesta: "pensar",
+pista: "Completa la palabra: p e n s a _"
+},
+{
+sala: "Sala 5: Juicio Final",
+pregunta: "La IA sin valores humanos puede causar decisiones sin...",
+respuesta: "empatia"
+pista: "Completa la palabra: e m _ a t i _ "
+},
+{
+sala: "Sala 5: Juicio Final",
+pregunta: "La palabra clave para usar bien la IA es: uso...",
+respuesta: "responsable",
+pista: "Completa la palabra: r e _ p o n s a b l _"
+}
+];
+
+let actual = 0;
+
+function cargarPuzzle(){
+    document.getElementById("sala").innerText = puzzles[actual].sala;
+    document.getElementById("pregunta").innerText = puzzles[actual].pregunta;
+    document.getElementById("respuesta").value = "";
+    document.getElementById("mensaje").innerText = "";
+    document.getElementById("pista").innerText = "";
+    document.getElementById("progreso").innerText =
+        "Puzzle " + (actual + 1) + " de 10";
+}
+
+function mostrarPista(){
+    document.getElementById("pista").innerText =
+        "💡 Pista: " + puzzles[actual].pista;
+}
+
+function verificar(){
+    let user = document.getElementById("respuesta").value.toLowerCase().trim();
+    let correcta = puzzles[actual].respuesta.toLowerCase();
+
+    if(user === correcta){
+        document.getElementById("mensaje").innerText =
+            "✅ Correcto. La puerta se desbloqueó.";
+
+        actual++;
+
+        if(actual < puzzles.length){
+            setTimeout(cargarPuzzle, 1500);
+        } else {
+            setTimeout(function(){
+                document.getElementById("sala").innerText =
+                    "🏆 ESCAPE COMPLETADO";
+                document.getElementById("pregunta").innerText =
+                    "Has superado las 5 salas y escapaste del sistema de IA.";
+                document.getElementById("respuesta").style.display = "none";
+                document.querySelector("button").style.display = "none";
+                document.getElementById("mensaje").innerText =
+                    "🔓 Eres libre.";
+                document.getElementById("progreso").innerText =
+                    "10 de 10 puzzles resueltos";
+            }, 1500);
+        }
+    } else {
+        document.getElementById("mensaje").innerText =
+            "❌ Respuesta incorrecta. Sigue pensando...";
+    }
+}
+
+cargarPuzzle();
+</script>
+
+</body>
+</html>
