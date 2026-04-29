@@ -118,7 +118,7 @@ footer{
 </head>
 <body>
 
-<a href="paginaini.html" class="atras">⮌ Atrás</a>
+<a href="index.html" class="atras">⮌ Atrás</a>
 
 <header>
     <h1>🔐 Escape Room Digital</h1>
@@ -208,8 +208,8 @@ pista: "Completa la palabra: p e n s a _"
 {
 sala: "Sala 5: Juicio Final",
 pregunta: "La IA sin valores humanos puede causar decisiones sin...",
-respuesta: "empatia"
-pista: "Completa la palabra: e m _ a t i _ "
+respuesta: "empatia",
+pista: "Completa la palabra: e m _ a t i _"
 },
 {
 sala: "Sala 5: Juicio Final",
@@ -255,7 +255,7 @@ function verificar(){
                 document.getElementById("pregunta").innerText =
                     "Has superado las 5 salas y escapaste del sistema de IA.";
                 document.getElementById("respuesta").style.display = "none";
-                document.querySelector("button").style.display = "none";
+                document.querySelectorAll("button").forEach(btn => btn.style.display = "none");
                 document.getElementById("mensaje").innerText =
                     "🔓 Eres libre.";
                 document.getElementById("progreso").innerText =
