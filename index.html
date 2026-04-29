@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>🌍 Aventura IA</title>
+
+<style>
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Arial;
+    color: white;
+    text-align: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+    overflow-x: hidden;
+}
+
+/* FONDO */
+.hero{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+    background-size: cover;
+    background-position: center;
+}
+
+/* TITULO */
+h1{
+    font-size: 60px;
+    max-width: 900px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* SUBTEXTO */
+.subtitulo{
+    font-size: 24px;
+    max-width: 850px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+/* FRASE DESTACADA */
+.frase{
+    font-size: 22px;
+    color: #00e5ff;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(0,229,255,0.4);
+}
+
+/* BOTON PRINCIPAL */
+.boton{
+    display: inline-block;
+    padding: 18px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    box-shadow: 0 0 25px rgba(0,198,255,0.4);
+    transition: 0.3s;
+    animation: brillo 1.5s infinite alternate;
+}
+
+.boton:hover{
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(0,198,255,0.8);
+}
+
+/* EFECTO */
+@keyframes brillo{
+    from{
+        box-shadow: 0 0 15px rgba(0,198,255,0.3);
+    }
+    to{
+        box-shadow: 0 0 35px rgba(0,198,255,0.8);
+    }
+}
+
+/* SECCIÓN INFO */
+.info{
+    padding: 30px 30px 70px 30px;
+    background: rgba(255,255,255,0.03);
+    margin-top: -40px;
+}
+
+.info h2{
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+/* TARJETAS */
+.tarjetas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.tarjeta{
+    width: 280px;
+    padding: 30px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.tarjeta:hover{
+    transform: scale(1.05);
+}
+
+.tarjeta h3{
+    color: #00e5ff;
+    margin-bottom: 15px;
+}
+
+footer{
+    padding: 25px;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+    <h1>🤖 ¿SABES REALMENTE CÓMO UTILIZAR LA IA?</h1>
+
+    <p class="subtitulo">
+        Hoy no solo aprenderás sobre inteligencia artificial…
+        entrarás en una aventura donde descubrirás sus beneficios,
+        sus riesgos, sus secretos y cómo usarla de forma correcta.
+    </p>
+
+    <p class="frase">
+        🚀 No será una lectura… será una misión.
+    </p>
+
+</section>
+
+<section class="info">
+
+    <h2>¿Qué encontrarás en esta misión?</h2>
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+            <h3>✨ Beneficios</h3>
+            <p>
+                Descubre cómo la IA puede ayudarte en el estudio,
+                trabajo y en la vida diaria.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>⚠️ Riesgos</h3>
+            <p>
+                Aprende a detectar peligros como dependencia,
+                desinformación y pérdida de privacidad.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>⚖️ Decisiones</h3>
+            <p>
+                Enfrenta juegos donde deberás decidir qué está bien
+                y qué está mal en el uso de la IA.
+            </p>
+        </div>
+
+    </div>
+
+    <a href="paginaini.html" class="boton">
+        🎮 COMENZAR LA AVENTURA
+    </a>
+
+</section>
+
+<footer>
+    <p>© 2026 - Proyecto educativo interactivo</p>
+</footer>
+
+</body>
+</html>
